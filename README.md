@@ -8,7 +8,7 @@
 ## Как запустить проект
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/grehochkag82/Kotlin_Advanced_Lab_9_12_Fedotova.git
+git clone https://github.com/vfedotova418-png/Kotlin_Advanced_Lab_9_12_Fedotova.git
 ```
 2. Откройте проект в IntelliJ IDEA.
 3. Запустите любой пример через контекстное меню или напрямую из `main`.
