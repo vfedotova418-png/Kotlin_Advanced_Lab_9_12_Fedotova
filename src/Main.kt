@@ -1,8 +1,11 @@
+import example.InstantMessenger
+import example.SmartPhone
 import modules.EnergyGenerator
 import modules.ModuleResult
 import modules.ResearchLab
 import resources.OutpostResource
 import resources.ResourceManager
+import kotlin.properties.Delegates
 
 fun handleModuleResult(result: ModuleResult) {
     when (result) {
@@ -17,6 +20,16 @@ fun handleModuleResult(result: ModuleResult) {
             )
         is ModuleResult.Error ->
             println("ОШИБКА: ${result.reason}")
+    }
+}
+
+var counter: Int by Delegates.observable(0) { _, old, new ->
+    println("Счётчик изменился: $old -> $new")
+}
+
+class User {
+    var name: String by Delegates.observable("<no name>") { _, old, new ->
+        println("Имя изменено: '$old' -> '$new'")
     }
 }
 
@@ -40,4 +53,11 @@ fun main() {
     handleModuleResult(labResult)
     println()
     manager.printAll()
+    val max = InstantMessenger("MAX")
+//    val photoCamera = PhotoCamera()
+    val yotaPhone = SmartPhone("YotaPhone ", max)
+    yotaPhone.sendTextMessage()
+    yotaPhone.sendVideoMessage()
+    counter = 1
+    counter = 5
 }
