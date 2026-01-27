@@ -1,5 +1,6 @@
 import example.InstantMessenger
 import example.SmartPhone
+import example.UserProfile
 import modules.EnergyGenerator
 import modules.ModuleResult
 import modules.ResearchLab
@@ -60,4 +61,21 @@ fun main() {
     yotaPhone.sendVideoMessage()
     counter = 1
     counter = 5
+    println("Создаём профиль пользователя...")
+    val user = UserProfile("Алиса", "alice@example.com")
+
+    println("\nИмя: ${user.name}")
+    println("Email: ${user.email}")
+
+    println("\nОбращаемся к аватару впервые:")
+    println("Файл аватара: ${user.avatar}")
+
+    println("\nОбращаемся к аватару снова (должен быть взят из кэше):")
+    println("Файл аватара: ${user.avatar}")
+
+    println("\nМеняем email:")
+    user.email = "vfedotova418@gmail.com"
+
+    println("\nМеняем имя:")
+    user.name = "Helel P."
 }
