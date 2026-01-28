@@ -1,3 +1,4 @@
+import example.GameHero
 import example.InstantMessenger
 import example.SmartPhone
 import example.UserProfile
@@ -78,4 +79,21 @@ fun main() {
 
     println("\nМеняем имя:")
     user.name = "Helel P."
+
+    println("Создаём героя...")
+    val hero = GameHero("Воин Света")
+
+    println("\nТекущая мана: ${hero.mana}")
+
+    println("\nГерой пытается использовать способность:")
+    println("Способность: ${hero.ultimate}")
+
+    println("\nПовторный вызов способности (должна быть мгновенной):")
+    println("Способность: ${hero.ultimate}")
+
+    println("\nМеняем имя героя:")
+    hero.name = "Тёмный Паладин"
+
+    println("\nГерой восстанавливает ману:")
+    hero.mana = 200
 }
